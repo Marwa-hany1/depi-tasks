@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.food-empire {
+    font-size: 24px;
+}
+
+.food {
+    font-weight: bold;
+    display: block;
+}
+
+.empire {
+    font-family: cursive, sans-serif;
+    font-style: italic;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.icons li a image {
+    width: 20;
+}
+
+.section1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 40px;
+}
+
+.text-left {
+    max-width: 300px;
+    margin-top: 50px;
+}
+
+.page-count {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.text-left h2 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.text-left .description {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.text-right {
+    max-width: 400px;
+    margin-top: 200px
+}
+
+.text-right h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.text-right .description {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #bbb;
+}
