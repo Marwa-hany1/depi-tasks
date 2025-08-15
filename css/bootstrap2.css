@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+.bg-gradient-primary-to-secondary {
+    background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+}
+
+.text-gradient-primary-to-secondary {
+    background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* .cardimg {
+     
+    margin: 0 29%;
+     
+}
+.content{
+    margin-left: 20%;
+}
+.buttons, .txt{
+    margin-left: 40%;
+} */
+
+/* .row{
+    padding: 0 20%;
+} */
+.content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.parent {
+    position: relative;
+    height: 75vw;
+    width: 75vw;
+    border-radius: 5vw;
+    margin-top: 5vw;
+    max-height: 40rem;
+    max-width: 40rem;
+}
+
+.dots-1 {
+    position: absolute;
+    width: 5%;
+    right: 2%;
+    top: 4vw;
+    z-index: 2;
+}
+
+.dots-2 {
+    position: absolute;
+    width: 5%;
+    right: -7%;
+    top: 6.05vw;
+    z-index: 2;
+}
+
+.dots-3 {
+    position: absolute;
+    width: 5%;
+    left: 2%;
+    bottom: 6.05vw;
+    z-index: 2;
+}
+
+.dots-4 {
+    position: absolute;
+    width: 5%;
+    left: -7%;
+    bottom: 4vw;
+    z-index: 2;
+}
+
+.dots-1 svg path,
+.dots-3 svg path {
+    fill: #f0f0f3;
+}
+
+.dots-2 svg path,
+.dots-4 svg path {
+    fill: #3333aa;
+}
+
+
+
+.buttons button {
+    min-width: 10rem;
+}
+
+.content2 h1 {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.about {
+    margin-top: 10%;
+    padding: 4% 10%;
+    min-height: 26vw;
+}
+
+.ab {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration {
+    background-color: rgb(240, 238, 238);
+
+
+}
+
+.cont-btn:hover {
+    background-color: rgba(225, 225, 225, 0.5) !important;
+}
+
+form .sub {
+    background-color: rgb(166, 129, 201);
+    border: none;
+    min-width: 35vw;
+    margin-left: -3vw;
+}
+
+@media (min-width: 1400px) {
+    .parent {
+        width: 38vw !important;
+        height: 35vw !important;
+    }
+
+    .cardimg {
+        margin-top: 0;
+    }
+
+    h1 {
+        width: 20vw;
+        text-align: start;
+    }
+
+    .row {
+        padding: 0;
+    }
+
+    .content2 {
+        justify-content: start;
+        align-items: start;
+    }
+
+    .content2 h1,
+    .let h1 {
+        min-width: 30vw !important;
+        margin: 0;
+        text-align: start;
+
+    }
+
+    .let h1 {
+        min-width: 40vw !important;
+        margin: 0;
+        text-align: start;
+
+    }
+
+    .buttons button {
+        min-width: 10rem;
+    }
+
+    .cardu {
+        max-width: 50vw;
+    }
+
+    form .sub {
+        margin-left: -15%;
+    }
+}
