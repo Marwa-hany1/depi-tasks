@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href=css/bootstrap1.css>
+    <!-- Font Awesome CDN (latest free version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-vWafpSspjU9zA5Y7hAk0Pj3Z+Uj5A3NURmEicYMTZksIszPj6o7UQlxd8Sk3YoQ6WbSv+DO+kZB9X9zE6GXY7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .navbar-toggler {
+            background-color: rgba(0, 0, 0, 0.4);
+            border: none;
+            height: 5vh;
+
+        }
+
+        .navbar-toggler:hover,
+        .navbar-toggler:focus {
+            background-color: black;
+            box-shadow: none;
+            border: none !important;
+
+        }
+
+        .custom-icon {
+            background-image: none;
+            position: relative;
+            width: 24px;
+            height: 2px;
+            background-color: white;
+            display: inline-block;
+        }
+
+        .custom-icon::before,
+        .custom-icon::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: white;
+            left: 0;
+        }
+
+        .custom-icon::before {
+            top: -8px;
+        }
+
+        .custom-icon::after {
+            top: 8px;
+        }
+
+        .nav-item a {
+            color: aliceblue !important;
+        }
+
+        .btn-close {
+            --bs-btn-close-color: #fff;
+            --bs-btn-close-opacity: 1;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 4% !important;
+            --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414'/%3e%3c/svg%3e");
+        }
+
+        .home,
+        .about {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(images/bg-masthead.jpg);
+            min-height: 47.6vw;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about {
+            background: none;
+            margin-top: -2%;
+            min-height: 35vw;
+        }
+
+        .services {
+            min-height: 43vw;
+            background: #198caf
+        }
+
+        .contact {
+            background: #198caf;
+            max-height: 26vw;
+        }
+
+        .icon {
+            background-color: #fff;
+            color: #1D809F;
+            height: 7rem;
+            width: 7rem;
+            border-radius: 50%;
+            line-height: 7.5rem;
+            font-size: 2.25rem;
+            box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+            margin: 1.5rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .callout {
+            padding: 15rem 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(images/bg-callout.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            min-height: 47.6vw;
+
+
+        }
+
+        .card,
+        .card2,
+        .card3,
+        .card4 {
+            padding: 3%;
+            background: linear-gradient(rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)),
+                url(images/portfolio-1.jpg);
+            color: #fff;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: end;
+            min-height: 40vh;
+            text-align: start;
+            transition: 0.3s ease;
+        }
+
+        .card2 {
+            background: linear-gradient(rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)),
+                url(images/portfolio-2.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card3 {
+            background: linear-gradient(rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)),
+                url(images/portfolio-3.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card4 {
+            background: linear-gradient(rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)),
+                url(images/bg-callout.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card::before,
+        .card2::before,
+        .card3::before,
+        .card4::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(21, 118, 148, 0);
+            /* اللون الأزرق شفاف */
+            transition: background-color 0.5s ease;
+            z-index: 1;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 20vw;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .icon1 {
+
+            height: 4rem;
+            width: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #157694
+        }
+
+        .map iframe {
+            width: 100vw !important;
+            min-height: 46vw;
+        }
+
+        .scrol {
+            position: sticky;
+            top: 91.5vh;
+            left: 96.5%;
+            padding-left: 1%;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 10%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        @media (min-width: 1200px) {
+
+            .card:hover,
+            .card2:hover,
+            .card3:hover,
+            .card4:hover {
+                background-color: #157694;
+                transform: scale(.8);
+            }
+
+            .card:hover::before,
+            .card2:hover::before,
+            .card3:hover::before,
+            .card4:hover::before {
+                background-color: rgba(21, 118, 148, 0.6);
+                /* تضيف لون أزرق عند الهوفر */
+            }
+
+            /* .scrol{
+    margin-left: 74rem; 
+  } */
+        }
+
+        /* @media (min-width: 1250px) {
+    .scrol{
+    margin-left: 115rem; 
+  }
+} */
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+    <nav class="navbar   fixed-top d-flex">
+        <div class="container-fluid justify-content-end">
+            <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon custom-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-light" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header" style="    background: #157694;">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">start Bootstrap</h5>
+                    <button type="button " class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" style="    background: #1D809F;">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#port">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="home" id="home">
+        <div class="container text-center mt-5 mb-5 px-4 px-lg-5 ">
+
+            <h1 style="font-size: 4rem; font-weight: 700;" class="mb-3">Stylish Portfolio</h1>
+            <h3 style="font-weight: 650;" class="mb-5">A Free Bootstrap Theme by Start Bootstrap</h3>
+            <a class="btn btn-primary btn-xl mb-5" href="#about"
+                style="background-color: #157694; border: none; padding: 1.25rem 2.5rem;">Find Out More</a>
+
+        </div>
+    </div>
+    <div class="scrol">
+        <a href="#home">
+            <img src="images/Screenshot_2025-07-31_144311-removebg-preview.png" alt="" style="width: 3rem;">
+        </a>
+    </div>
+    <div class="about" id="about">
+        <div class="container text-center  mb-5 px-4 px-lg-5">
+            <h2 class="text-wrap mb-3" style="    font-size: calc(1.325rem + 0.9vw);">Stylish Portfolio is the perfect
+                theme for your next project!</h2>
+            <p style="    font-size: 1.25rem;font-weight: 300;">This theme features a flexible, UX friendly sidebar menu
+                and stock photos from our friends at <a href="">Unsplash </a>!</p>
+            <a class="btn btn-primary btn-xl mt-5" href="#about"
+                style="background-color: #121313; border: none; padding: 1.25rem 2.5rem;">Find Out More</a>
+        </div>
+    </div>
+
+    <div class="services pt-5" id="services">
+        <div class="container text-center mt-5    px-4 px-lg-5">
+            <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 500; " class="text-warning">Services
+            </h3>
+            <h2 class="text-wrap mb-3" style="    font-size:3rem ; color: #fff;">What We Offer</h2>
+            <div class="row ">
+                <div class="col-xl-3 col-md-6 mt-5 mb-5 ">
+                    <div class="icon align-self-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.1"
+                            stroke="currentColor" class="size-6" style="width:4.2rem">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>
+
+                    </div>
+                    <h3 class="fw-bolder text-light">Responsive</h3>
+                    <p class="text-light">Looks great on any screen size!</p>
+                </div>
+                <div class="col-xl-3 col-md-6 mt-5 mb-5 ">
+                    <div class="icon align-self-center">
+                        <img src="images/Screenshot_2025-07-31_121908-removebg-preview.png" alt=""
+                            style="width: 4.2rem;">
+                    </div>
+                    <h3 class="fw-bolder text-light">Responsive</h3>
+                    <p class="text-light">Looks great on any screen size!</p>
+                </div>
+                <div class="col-xl-3 col-md-6  mb-5   mt-xl-5">
+                    <div class="icon align-self-center">
+                        <img src="images/image-removebg-preview.png" alt="" style="width: 4.2rem;">
+                    </div>
+                    <h3 class="fw-bolder text-light">Responsive</h3>
+                    <p class="text-faded mb-0 text-light">
+                        Millions of users
+                        <img src="images/icons8-heart-30 (2).png" alt="" style="width: 1.5rem;">
+                        Start Bootstrap!
+                    </p>
+                </div>
+                <div class="col-xl-3 col-md-6  mb-5  mt-xl-5 ">
+                    <div class="icon align-self-center">
+                        <img src="images/image-removebg-preview (1).png" alt="" style="width: 4.2rem;">
+                    </div>
+                    <h3 class="fw-bolder text-light">Responsive</h3>
+                    <p class="text-light">Looks great on any screen size!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="callout">
+        <div class="container text-center mt-5 mb-5 px-4 px-lg-5">
+            <h2 style="font-size: 3.5rem; font-weight: 700;  " class="mb-3">Welcome to your next website!</h2>
+            <a class="btn btn-primary btn-xl mb-5" href="#about"
+                style="background-color: #157694; border: none; padding: 1.25rem 2.5rem;">Download Now!</a>
+
+        </div>
+    </div>
+
+    <div class="recentproj pt-5 mb-5" id="port">
+        <div class="container text-center mt-5      ">
+            <h3 style="font-size: 1rem; text-transform: uppercase; font-weight: 500; " class="text-warning">Portfolio
+            </h3>
+            <h2 class="text-wrap mb-3" style="    font-size:3rem ; color: #000;">Recent Projects</h2>
+            <div class="row  g-0">
+                <div class="col-xl-6 mt-5 mb-xl-0 mb-3   ">
+                    <div class="card">
+                        <h2 style="font-size: 0.8rem; font-weight: 700; position: relative; z-index: 3;">STATIONARY</h2>
+                        <P style="font-size: 1.2rem; font-weight: 300; position: relative; z-index: 3;">Ayellow pencil
+                            with envelopes on a clean, blue backdrop!</P>
+                    </div>
+                </div>
+                <div class="col-xl-6 mt-xl-5  mb-xl-0 mb-3 ">
+                    <div class="card2">
+                        <h2 style="font-size: 0.8rem; font-weight: 700; position: relative; z-index: 3;">STATIONARY</h2>
+                        <P style="font-size: 1.2rem; font-weight: 300;position: relative; z-index: 3;">Ayellow pencil
+                            with envelopes on a clean, blue backdrop!</P>
+                    </div>
+                </div>
+                <div class="col-xl-6  mb-xl-0 mb-3   ">
+                    <div class="card3">
+                        <h2 style="font-size: 0.8rem; font-weight: 700; position: relative; z-index: 3;">STATIONARY</h2>
+                        <P style="font-size: 1.2rem; font-weight: 300; position: relative; z-index: 3;">Ayellow pencil
+                            with envelopes on a clean, blue backdrop!</P>
+                    </div>
+                </div>
+                <div class="col-xl-6  mb-xl-0 mb-3  ">
+                    <div class="card4">
+                        <h2 style="font-size: 0.8rem; font-weight: 700; position: relative; z-index: 3;">STATIONARY</h2>
+                        <P style="font-size: 1.2rem; font-weight: 300; position: relative; z-index: 3;">Ayellow pencil
+                            with envelopes on a clean, blue backdrop!</P>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="contact p-4">
+        <div class="container text-center mt-5 mb-5 px-4 px-lg-5 ">
+
+            <h2 style="font-size: calc(1.325rem + 0.9vw); font-weight: 700;" class="mb-4 text-light">The buttons below
+                are impossible to resist...</h2>
+
+            <div class="buttons">
+                <a class="btn text-dark btn-xl mb-5 me-3" href="#about"
+                    style="background-color: #fff; border: none; padding: 1.25rem 2.5rem;">click Me!</a>
+                <a class="btn text-light btn-xl mb-5" href="#about"
+                    style="background-color: #0f0f0f; border: none; padding: 1.25rem 2.5rem;">Look at Me!</a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="conatiner" id="contact">
+        <div class="map" id="contact">
+            <iframe
+                src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+            <br>
+            <small><a
+                    href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+        </div>
+
+    </div>
+    <div class="footer mt-5">
+        <div class="icons">
+            <div class="icon1"><img src="images/image-removebg-preview (2).png" alt="" style="width: 2rem;">
+            </div>
+            <div class="icon1">
+                <img src="images/Screenshot_2025-07-31_140707-removebg-preview.png" alt="" style="width: 3rem;">
+            </div>
+            <div class="icon1">
+                <img src="images/Screenshot_2025-07-31_140750-removebg-preview.png" alt="" style="width: 2.5rem;">
+            </div>
+
+        </div>
+        <p class="text-muted small mb-0 text-center mt-5">Copyright © Your Website 2023</p>
+    </div>
+    <script src="script/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
